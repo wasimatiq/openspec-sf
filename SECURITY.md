@@ -14,6 +14,7 @@ than opening a public issue.
 - Alternatively, email wasimatiq@gmail.com with details.
 
 Please include:
+
 - A description of the vulnerability and its potential impact.
 - Steps to reproduce, or a proof of concept.
 - Any suggested remediation, if known.

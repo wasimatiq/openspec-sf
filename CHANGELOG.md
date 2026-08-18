@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
+- CI workflow linting Markdown and YAML on push/PR.
+- `SECURITY.md` with vulnerability reporting instructions.
+- Badges section in `README.md`.
+- `.github/CODEOWNERS`.
+- `CHANGELOG.md`.
 - Issue and pull request templates under `.github/`.
 - `CODE_OF_CONDUCT.md` (Contributor Covenant v2.1).
 - `CONTRIBUTING.md` describing the OpenSpec workflow and contribution process.

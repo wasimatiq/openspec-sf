@@ -14,7 +14,7 @@ OpenSpec is a workflow for planning and tracking changes as specs before code is
 
 ## Project structure
 
-```
+```text
 .claude/
   commands/opsx/   # /opsx:* slash commands (propose, explore, apply, sync, archive, update)
   skills/          # Matching OpenSpec skills used by Claude Code
@@ -43,13 +43,13 @@ openspec/
 
 ## Workflow
 
-| Command | Purpose |
-|---|---|
-| `/opsx:explore` | Think through an idea or problem before proposing a change |
-| `/opsx:propose` | Describe what you want to build and generate a full proposal (design, specs, tasks) |
-| `/opsx:apply` | Implement the tasks from an active change |
-| `/opsx:sync` | Sync a change's delta specs into the main specs without archiving |
-| `/opsx:archive` | Archive a change once implementation is complete |
-| `/opsx:update` | Revise an existing change's planning artifacts |
+| Command          | Purpose                                                                               |
+| ---------------- | -------------------------------------------------------------------------------------- |
+| `/opsx:explore`  | Think through an idea or problem before proposing a change                             |
+| `/opsx:propose`  | Describe what you want to build and generate a full proposal (design, specs, tasks)    |
+| `/opsx:apply`    | Implement the tasks from an active change                                              |
+| `/opsx:sync`     | Sync a change's delta specs into the main specs without archiving                      |
+| `/opsx:archive`  | Archive a change once implementation is complete                                       |
+| `/opsx:update`   | Revise an existing change's planning artifacts                                         |
 
 Typical flow: `/opsx:propose` → `/opsx:apply` → `/opsx:archive`.
