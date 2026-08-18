@@ -11,8 +11,8 @@ jobs:
     name: Lint Markdown
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: DavidAnson/markdownlint-cli2-action@v18
+      - uses: actions/checkout@v7
+      - uses: DavidAnson/markdownlint-cli2-action@v24
         with:
           globs: |
             **/*.md
@@ -22,7 +22,7 @@ jobs:
     name: Lint YAML
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ibiqlik/action-yamllint@v3
         with:
           config_data: "{extends: default, rules: {line-length: disable, document-start: disable, truthy: {check-keys: false}}}"
