@@ -1,14 +1,19 @@
 # OS
 .DS_Store
 Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
 
 # Editors
-.vscode/
 .idea/
 *.swp
 
 # Logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Environment
 .env
@@ -24,3 +29,19 @@ venv/
 # Build output
 dist/
 build/
+
+# Salesforce
+.sf/
+.sfdx/
+.localdevserver/
+deploy-options.json
+**/lwc/jsconfig.json
+
+# LWC Jest coverage reports
+coverage/
+
+# ApexPMD cache
+.pmdCache
+
+# Eslint cache
+.eslintcache
