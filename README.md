@@ -1,5 +1,11 @@
 # openspec-sf
 
+[![License: MIT](https://img.shields.io/github/license/wasimatiq/openspec-sf)](LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/wasimatiq/openspec-sf)](https://github.com/wasimatiq/openspec-sf/commits/main)
+[![Open issues](https://img.shields.io/github/issues/wasimatiq/openspec-sf)](https://github.com/wasimatiq/openspec-sf/issues)
+[![Open PRs](https://img.shields.io/github/issues-pr/wasimatiq/openspec-sf)](https://github.com/wasimatiq/openspec-sf/pulls)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+
 An [OpenSpec](https://github.com/Fission-AI/OpenSpec) spec-driven project, set up for use with Claude Code.
 
 ## What is this?
