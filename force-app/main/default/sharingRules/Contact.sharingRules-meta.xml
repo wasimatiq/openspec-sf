@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingGuestRules>
+        <fullName>ShareContactsWithGuestForOrderLookup</fullName>
+        <accessLevel>Read</accessLevel>
+        <includeHVUOwnedRecords>false</includeHVUOwnedRecords>
+        <label>Share Contacts With Guest For Order Lookup</label>
+        <sharedTo>
+            <guestUser>Order_Status_Lookup</guestUser>
+        </sharedTo>
+        <criteriaItems>
+            <field>LastName</field>
+            <operation>notEqual</operation>
+            <value>~~~NEVER_MATCHES~~~</value>
+        </criteriaItems>
+    </sharingGuestRules>
+</SharingRules>
