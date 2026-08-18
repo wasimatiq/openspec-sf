@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "Salesforce DX": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@salesforce/mcp",
+        "--orgs",
+        "orgfarm-f4c469b8a0-dev-ed.develop.lightning.force.com",
+        "--toolsets",
+        "orgs,metadata,data,users"
+      ]
+    }
+  }
+}
