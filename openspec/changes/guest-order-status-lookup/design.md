@@ -62,12 +62,27 @@ through the sanctioned Flow. It does **not** protect against a guest
 session querying `Order` a different way (see Risks) — that gap is closed
 by decision 4, not by this one.
 
-**4. Disable default guest API access for the hosting site's profile**
-Because the sharing rule alone can't distinguish "went through our Flow"
-from "queried the API directly," the guest profile's default API access
-must be turned off so the Flow is the only door into `Order`/`Contact` for
-that identity. Alternative considered: rely on sharing-rule narrowness
-alone — rejected per the user's explicit decision to do both.
+**4. Guest API access ("Allow guest users to access public APIs") must
+be enabled — revised from the original decision**
+Originally decided as *disabled*, so the sharing rule's narrowness
+wouldn't be the only thing standing between a guest identity and
+`Order`/`Contact`. Reversed after implementation revealed the Flow LWR
+component's own `startFlow` interaction call requires this preference
+to succeed for a genuine (unauthenticated) guest session — without it,
+the Flow itself returns 401 for real visitors, making the capability
+non-functional. Verified before accepting the reversal that it doesn't
+reopen the gap the original decision was meant to close: with the
+preference on, the classic REST API (`/services/data/vXX.0/query`)
+still returns 401 for a guest session (cookie-based auth isn't
+accepted there — a session/access token is required, which a browser
+guest session doesn't carry), and the LWR `webruntime/api/.../query`
+passthrough returns 404 (no generic SOQL endpoint is exposed to
+guests). In practice the preference only unlocks the specific
+Salesforce-defined Connect API operations already wired for guest use
+(this Flow's `startFlow` call, CMS media delivery) — not a general
+`Order`/`Contact` query surface. The Flow remains the only functional
+path into that data; confirmed live under a genuinely anonymous
+session (see tasks.md 4.4 and 5.6).
 
 **5. Flat tracking fields on `Order`, not a child object**
 Confirmed: this business ships one shipment per order. `TrackingNumber__c`,
@@ -86,8 +101,10 @@ who has both the order number and the correct ship-to email — see Risks.
   `Order` for that identity, not just the intended Flow — a broader rule
   than necessary would let someone bypass the email check entirely via
   direct API access.
-  → **Mitigation**: decisions 2 and 4 together (narrow criteria + API
-  access disabled) so there's no unguarded path.
+  → **Mitigation**: decisions 2 and 4 together — narrow sharing-rule
+  criteria, plus confirming (rather than assuming) that enabling guest
+  API access per the revised decision 4 doesn't expose a generic query
+  path — so there's no unguarded path in practice.
 
 - **[Risk]** Full shipping address + a matched email is real PII exposure;
   anyone who legitimately has both an order number and the ship-to email
